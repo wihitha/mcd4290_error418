@@ -5,9 +5,9 @@
         <title>ENG1003 week 2 prac exercise template</title>
         <style>
             p {
-                padding: 5em;
+                padding: 1em;
                 font-family: arial;
-                font-size: 2em;
+                font-size: 1em;
                 color: rgb(0, 0, 255);
             }
         </style>
@@ -15,11 +15,93 @@
     
     <body>
         <p>In Chrome, hit F12 to view the Console.</p>
-    
+        <p id = "root"></p>
+        <p id = "catanddog"></p>
         <script>
-            // YOUR JAVASCRIPT CODE HERE
 
+            // YOUR JAVASCRIPT CODE HERE
             
+            //Question 1
+            //equation has been hardcoded
+            // (4x^2)+6x-10
+            /* a is the coefficent of X^2
+               b is the coefficent of X
+               c is the coefficent of C */
+            var equation  = "4x^2+6x-10";
+            var a = 4;
+            var b = 6;
+            var c = -10;
+
+            var root1;
+            var root2;
+
+            root1 = (-b+Math.sqrt(Math.pow(b,2)-4*a*c))/(2*a) ;
+            root2 = (-b-Math.sqrt(Math.pow(b,2)-4*a*c))/(2*a) ;
+            document.getElementById("root").innerHTML = "Question 1: " + "Roots of " +equation +" is " + root1 +" & " +root2;
+            document.write("Question 1: " + "Roots:" + root1 +  ", " + root2 + "<br>"+ "<br>");
+
+            //Question 2
+            var str1 = "birddogcatfish"
+            var str2 = " and "
+            document.getElementById("catanddog").innerHTML = "Question 2: " + str1.substr(7,3) + str2 + str1.substr(4,3);
+            document.write("Question 2: " +str1.substr(7,3) + str2 + str1.substr(4,3)+ "<br>"+"<br>");
+
+            //Question 3
+
+            /* The code they gave has an syntax error (document,body). it should be ".". I changed it
+            rewrite the code because i couldnt show the part how i got it from chrome (f12) */
+
+            /* var i = 11;
+            if (i >= 10){
+            document,body.innerHTML = "i is greater than or equal to 10";
+            }
+            else{
+            document.body.innerHTML = "i is less than 10";
+            } */
+
+            //Changed the = to += because otherwise it will rewrite the whole body
+            var i = 11;
+            document.write("Question 3: ")
+            if (i >= 10){
+            document.body.innerHTML += "i is greater than or equal to 10";
+            }
+            else{
+            document.body.innerHTML += "i is less than 10";
+            }
+            document.write("<br>"+ "<br>")
+
+            //Question 4
+            document.write("Question 4: " + "<br>")
+            var number1, number2;
+            //RHS generates a random number between 1 and 10 inclusive
+            number1 = Math.floor((Math.random() * 10) + 1);
+            //RHS generates a random number between 1 and 10 inclusive
+            number2 = Math.floor((Math.random() * 10) + 1);
+            console.log("number1 = " + number1 + " number2 = " + number2);
+            document.write("number1 = " + number1 + " number2 = " + number2 + "<br>");
+            //HERE your code to swap the values in number1 and number2
+            document.write("after swapping"+ "<br>")
+            number1 = number1 + number2;
+            number2 = number1 - number2;
+            number1 = number1 - number2;
+
+            console.log("number1 = " + number1 + " number2 = " + number2);
+            document.write("number1 = " + number1 + " number2 = " + number2 + "<br>"+"<br>");
+
+            //Question 5
+            document.write("Question 5: " + "<br>")
+            var year;
+            var yearNot2015Or2016;
+            year = 2000;
+            //couldn't find an issue the expression below says "year is not equal to 2015 or 2016"
+            yearNot2015Or2016 = year !== 2015 || year !== 2016;
+            console.log(yearNot2015Or2016);
+            document.write(yearNot2015Or2016);
+
+
+
+
+
         </script>
     </body>
 </html>
